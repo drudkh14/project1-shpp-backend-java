@@ -15,7 +15,7 @@ public class Project0 {
     /**
      * Name of properties file
      */
-    public static final String PROPERTIES_FILE = "project-0.properties";
+    public static final String PROPERTIES_FILE = "project0.properties";
 
     /**
      * Logger
