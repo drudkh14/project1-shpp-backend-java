@@ -15,14 +15,8 @@ import java.util.Properties;
  */
 public class PropertiesLoader {
 
-    /**
-     * name of properties file
-     */
     private final String fileName;
 
-    /**
-     * Logger
-     */
     private static final Logger logger = LoggerFactory.getLogger(PropertiesLoader.class);
 
     /**

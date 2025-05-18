@@ -12,21 +12,11 @@ import java.util.Properties;
  * set in the properties file.
  */
 public class Project0 {
-    /**
-     * Name of properties file
-     */
+
     public static final String PROPERTIES_FILE = "project0.properties";
 
-    /**
-     * Logger
-     */
     private static final Logger logger = LoggerFactory.getLogger(Project0.class);
 
-    /**
-     * Entry point to the program
-     *
-     * @param args Command line arguments.
-     */
     public static void main(String[] args) {
         logger.info("Starting Main");
 
@@ -36,19 +26,17 @@ public class Project0 {
         try {
             properties = propertiesLoader.loadProperties();
         } catch (Exception e) {
-            System.out.println("Could not load properties file: " + PROPERTIES_FILE + ". Exiting.");
-            logger.error("Could not load properties file: " + PROPERTIES_FILE, e);
+            logger.error("Could not load properties file: {}", PROPERTIES_FILE, e);
             return;
         }
 
-        Message message = new Message(properties.getProperty("username"));
+        Message message = new Message(properties.getProperty("username", "Default Default"));
         String output;
 
         try {
-            output = System.getProperty("format").equals("xml") ? message.toXml() : message.toJson();
+            output = "xml".equals(System.getProperty("format")) ? message.toXml() : message.toJson();
             logger.info("Serialized {} to {}", message, output);
         } catch (JsonProcessingException e) {
-            System.out.println("Could not serialize: " + e.getMessage());
             logger.error("Could not serialize {}", message, e);
             return;
         }

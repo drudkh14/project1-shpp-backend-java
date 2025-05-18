@@ -11,21 +11,13 @@ import org.slf4j.LoggerFactory;
  */
 public class Message {
 
-    /**
-     * Username
-     */
     private String name;
 
-    private final String greeting = "Привіт ";
+    private static final String GREETING = "Привіт ";
 
-    /**
-     * Mapper for serializing
-     */
-    private ObjectMapper mapper;
+    private final ObjectMapper jsonMapper = new ObjectMapper();
+    private final XmlMapper xmlMapper = new XmlMapper();
 
-    /**
-     * Logger
-     */
     private static final Logger logger = LoggerFactory.getLogger(Message.class);
 
     /**
@@ -47,12 +39,12 @@ public class Message {
      * @return Message
      */
     public String getMessage() {
-        return greeting + name + "!";
+        return GREETING + name + "!";
     }
 
     @Override
     public String toString() {
-        return "Message [name = " + name + ", greetings = " + greeting + "]";
+        return "Message [name = " + name + ", greetings = " + GREETING + "]";
     }
 
     /**
@@ -62,9 +54,8 @@ public class Message {
      * @throws JsonProcessingException to throw if there is a problem with serializing
      */
     public String toJson() throws JsonProcessingException {
-        mapper = new ObjectMapper();
         logger.debug("Serializing {} to JSON with ObjectMapper", this);
-        return mapper.writeValueAsString(this);
+        return jsonMapper.writeValueAsString(this);
     }
 
     /**
@@ -74,8 +65,7 @@ public class Message {
      * @throws JsonProcessingException to throw if there is a problem with serializing
      */
     public String toXml() throws JsonProcessingException {
-        mapper = new XmlMapper();
         logger.debug("Serializing {} to XML with XmlMapper", this);
-        return mapper.writeValueAsString(this);
+        return xmlMapper.writeValueAsString(this);
     }
 }
