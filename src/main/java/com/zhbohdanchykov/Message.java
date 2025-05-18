@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
  */
 public class Message {
 
-    private String name;
+    private final String name;
 
     private static final String GREETING = "Привіт ";
 
@@ -28,9 +28,6 @@ public class Message {
     Message(String name) {
         this.name = name;
         logger.info("Created Message: {}", this);
-    }
-
-    Message() {
     }
 
     /**
