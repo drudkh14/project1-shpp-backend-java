@@ -20,11 +20,10 @@ public class Project0 {
     public static void main(String[] args) {
         logger.info("Starting Main");
 
-        PropertiesLoader propertiesLoader = new PropertiesLoader(PROPERTIES_FILE);
         Properties properties;
 
         try {
-            properties = propertiesLoader.loadProperties();
+            properties = new PropertiesLoader(PROPERTIES_FILE).loadProperties();
         } catch (Exception e) {
             logger.error("Could not load properties file: {}", PROPERTIES_FILE, e);
             return;
