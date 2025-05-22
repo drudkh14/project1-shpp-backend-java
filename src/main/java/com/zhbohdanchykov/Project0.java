@@ -31,10 +31,12 @@ public class Project0 {
         }
 
         Message message = new Message(properties.getProperty("username", "Default Default"));
+        Serializer<Message> serializer = new Serializer<>(message);
         String output;
 
         try {
-            output = "xml".equals(System.getProperty("format")) ? message.toXml() : message.toJson();
+            output = "xml".equals(System.getProperty("format")) ? serializer.serializeToXml() :
+                    serializer.serializeToJson();
             logger.info("Serialized {} to {}", message, output);
         } catch (JsonProcessingException e) {
             logger.error("Could not serialize {}", message, e);

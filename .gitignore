@@ -36,3 +36,7 @@ build/
 
 ### Mac OS ###
 .DS_Store
+/dependency-reduced-pom.xml
+/src/main/resources/project0.properties
+/logs/project-0.log
+/logs/project-0-2025-05-18.log
