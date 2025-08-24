@@ -38,7 +38,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.zhbohdanchykov.Project0</mainClass>
+                            <mainClass>com.zhbohdanchykov.Project1</mainClass>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
                         </manifest>
@@ -96,7 +96,7 @@
 
                             <archive>
                                 <manifest>
-                                    <mainClass>com.zhbohdanchykov.Project0</mainClass>
+                                    <mainClass>com.zhbohdanchykov.Project1</mainClass>
                                 </manifest>
                                 <manifestEntries>
                                     <Class-Path>.</Class-Path>
@@ -138,7 +138,7 @@
                                     <transformers>
                                         <transformer
                                                 implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                            <mainClass>com.zhbohdanchykov.Project0</mainClass>
+                                            <mainClass>com.zhbohdanchykov.Project1</mainClass>
                                             <manifestEntries>
                                                 <Class-Path>.</Class-Path>
                                             </manifestEntries>

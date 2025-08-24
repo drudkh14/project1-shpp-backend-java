@@ -11,11 +11,11 @@ import java.util.Properties;
  * and supposed to write in console JSON or XML with greeting and username that
  * set in the properties file.
  */
-public class Project0 {
+public class Project1 {
 
     public static final String PROPERTIES_FILE = "project0.properties";
 
-    private static final Logger logger = LoggerFactory.getLogger(Project0.class);
+    private static final Logger logger = LoggerFactory.getLogger(Project1.class);
 
     public static void main(String[] args) {
         logger.info("Starting Main");
