@@ -27,8 +27,8 @@ deploy:
   before_script:
     - apt-get update && apt-get install -y openssh-client
     - eval $(ssh-agent -s)
-    - chmod 600 key.pem
-    - ssh-add key.pem
+    - chmod 600 $EC2_SSH_KEY
+    - ssh-add $EC2_SSH_KEY
   script:
     - scp -o StrictHostKeyChecking=no target/*.jar $EC2_USER@$EC2_HOST:$REMOTE_PATH
     - scp -o StrictHostKeyChecking=no -r target/lib $EC2_USER@$EC2_HOST:$REMOTE_PATH/
