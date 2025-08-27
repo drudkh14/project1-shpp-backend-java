@@ -30,5 +30,5 @@ deploy:
     - chmod 600 $EC2_SSH_KEY
     - ssh-add $EC2_SSH_KEY
   script:
-    - scp -o StrictHostKeyChecking=no target/*.jar $EC2_USER@$EC2_HOST:$REMOTE_PATH
+    - scp -o StrictHostKeyChecking=no target/*.jar $EC2_USER@$EC2_HOST:$REMOTE_PATH/
     - scp -o StrictHostKeyChecking=no -r target/lib $EC2_USER@$EC2_HOST:$REMOTE_PATH/

@@ -13,7 +13,7 @@ import java.util.Properties;
  */
 public class Project1 {
 
-    public static final String PROPERTIES_FILE = "project0.properties";
+    public static final String PROPERTIES_FILE = "project1.properties";
 
     private static final Logger logger = LoggerFactory.getLogger(Project1.class);
 
@@ -25,7 +25,7 @@ public class Project1 {
         try {
             properties = new PropertiesLoader(PROPERTIES_FILE).loadProperties();
         } catch (Exception e) {
-            logger.error("Could not load properties file: {}", PROPERTIES_FILE, e);
+            logger.error("Could not load properties file: {}", PROPERTIES_FILE);
             return;
         }
 
