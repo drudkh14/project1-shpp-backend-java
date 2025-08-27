@@ -18,7 +18,7 @@ public class Project1 {
     private static final Logger logger = LoggerFactory.getLogger(Project1.class);
 
     public static void main(String[] args) {
-        logger.info("Starting Main.");
+        logger.info("Starting Main");
 
         Properties properties;
 
