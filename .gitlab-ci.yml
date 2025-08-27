@@ -1,6 +1,6 @@
 stages:
   - build
-  - test
+  - deploy
 
 variables:
   REMOTE_PATH: /home/ubuntu/shpp/java-backend/project-1
